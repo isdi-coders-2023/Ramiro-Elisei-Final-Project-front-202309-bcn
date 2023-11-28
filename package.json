@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:dev": "vitest --watch",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
@@ -34,6 +35,12 @@
     "jsdom": "^22.1.0",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
-    "vitest": "^0.34.6"
-  }
+    "vitest": "^0.34.6",
+    "husky": "^8.0.0"
+  },
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
