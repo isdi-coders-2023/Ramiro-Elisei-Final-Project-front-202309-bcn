@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
 html {
   font-family: ${({ theme }) => theme.typography.mainFont};
   background-color: ${({ theme }) => theme.color.secondary};
+  color: ${({ theme }) => theme.color.main};
 }
 
 h1,
@@ -34,6 +35,10 @@ li {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+img {
+  max-width: 100%;
 }
 
 input, textarea, select {

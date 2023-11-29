@@ -2,6 +2,9 @@ import "styled-components";
 
 declare module "styled-components" {
   export interface DefaultTheme {
+    paddingSide: string;
+    paddingTop: string;
+
     color: {
       main: string;
       secondary: string;
