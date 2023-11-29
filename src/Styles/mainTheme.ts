@@ -1,6 +1,9 @@
 import { DefaultTheme } from "styled-components";
 
 const mainTheme: DefaultTheme = {
+  paddingSide: "16px",
+  paddingTop: "35px",
+
   color: {
     main: "#3a3b3b",
     secondary: "#f6f1e4",
@@ -15,7 +18,7 @@ const mainTheme: DefaultTheme = {
   },
 
   typography: {
-    mainFont: "'IBM Plex Sans'  sans-serif",
+    mainFont: "'IBM Plex Sans',  sans-serif",
   },
 };
 
