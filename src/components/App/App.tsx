@@ -7,7 +7,6 @@ const App = (): React.ReactElement => {
       <Header />
       <Routes>
         <Route path="/" element={<Navigate to="/home" />} />
-        <Route path="/" />
       </Routes>
     </>
   );
