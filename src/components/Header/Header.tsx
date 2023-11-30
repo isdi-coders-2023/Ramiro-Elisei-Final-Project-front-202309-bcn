@@ -1,3 +1,4 @@
+import Navigation from "../Navigation/Navigation";
 import HeaderStyled from "./HeaderStyled";
 
 const Header = (): React.ReactElement => {
@@ -10,6 +11,7 @@ const Header = (): React.ReactElement => {
         alt="Ludic logo"
         src="images/logoColored.svg"
       ></img>
+      <Navigation />
     </HeaderStyled>
   );
 };
