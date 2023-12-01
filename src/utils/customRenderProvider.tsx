@@ -15,10 +15,12 @@ const customRenderProvider = (children: React.ReactElement) => {
   });
   return render(
     <BrowserRouter>
-      <ThemeProvider theme={mainTheme}>{children}</ThemeProvider>
-      <Provider store={mockStore}>
-        <GlobalStyle />
-      </Provider>
+      <ThemeProvider theme={mainTheme}>
+        <Provider store={mockStore}>
+          {children}
+          <GlobalStyle />
+        </Provider>
+      </ThemeProvider>
     </BrowserRouter>,
   );
 };
