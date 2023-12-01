@@ -4,6 +4,7 @@ const ActivitiesListStyle = styled.ul`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  align-items: center;
   padding-top: 30px;
   padding-left: ${({ theme }) => theme.paddingSide};
   padding-right: ${({ theme }) => theme.paddingSide};

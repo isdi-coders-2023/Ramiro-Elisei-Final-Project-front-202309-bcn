@@ -1,4 +1,5 @@
 import { ActivityStructure } from "../../store/features/activities/types";
+import ActivityCard from "../ActivityCard/ActivityCard";
 import ActivitiesListStyle from "./ActivitiesListStyle";
 
 interface ActivitiesListProps {
@@ -10,8 +11,7 @@ const ActivitiesList = ({ activities }: ActivitiesListProps) => {
     <ActivitiesListStyle>
       {activities.map((activity) => (
         <li key={activity._id}>
-          <h2>{activity.activityName}</h2>
-          <img alt={activity.activityName}></img>
+          <ActivityCard activity={activity} />
         </li>
       ))}
     </ActivitiesListStyle>
