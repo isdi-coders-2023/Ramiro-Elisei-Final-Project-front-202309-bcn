@@ -11,6 +11,7 @@ const activitiesMockData: ActivityStructure[] = [
     activityDescription:
       "Cultivate sustainable ideas in our playful Generative Plant Gathering workshop: where creativity blossoms with environmental consciousness.",
     imageUrl: "https://i.ibb.co/8zFCCQk/plant-gadering.webp",
+    imageSmallUrl: "https://i.ibb.co/7vH8sj7/plant-gadering-small.webp",
   },
   {
     _id: "656493fa44b5521c2584c21c",
@@ -22,6 +23,7 @@ const activitiesMockData: ActivityStructure[] = [
     activityDescription:
       "Jack humorously explores wildly creative yet absurd solutions to sustainable challenges in engaging, thought-provoking lectures.",
     imageUrl: "https://i.ibb.co/0jgqppJ/Absurdity-Talk.webp",
+    imageSmallUrl: "https://i.ibb.co/vmR5Bbw/Absurdity-Talk-small.webp",
   },
 ];
 

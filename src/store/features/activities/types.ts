@@ -7,6 +7,7 @@ export interface ActivityStructure {
   startTime: string;
   activityDescription: string;
   imageUrl: string;
+  imageSmallUrl: string;
 }
 
 export interface ActivitiesInitialStructure {
