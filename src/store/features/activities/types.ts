@@ -8,3 +8,7 @@ export interface ActivityStructure {
   activityDescription: string;
   imageUrl: string;
 }
+
+export interface ActivitiesInitialStructure {
+  activities: ActivityStructure[];
+}
