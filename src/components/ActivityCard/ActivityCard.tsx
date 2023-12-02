@@ -1,4 +1,5 @@
 import { ActivityStructure } from "../../store/features/activities/types";
+import Button from "../Button/Button";
 import ActivityCardStyled from "./ActivityCardStyle";
 
 interface ActivityCardProps {
@@ -29,6 +30,20 @@ const ActivityCard = ({
       </div>
       <h2 className="activity-card__name">{activityName}</h2>
       <span className="activity-card__led">{ledBy}</span>
+      <div className="activity-card__toolbar">
+        <Button
+          text="Modify"
+          type="button"
+          className="button button--small button--dotted"
+          actionOnClick={() => {}}
+        />
+        <Button
+          text="Delete"
+          type="button"
+          className="button button--small button--solid"
+          actionOnClick={() => {}}
+        />
+      </div>
     </ActivityCardStyled>
   );
 };
