@@ -1,9 +1,20 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { ActivitiesInitialStructure, ActivityStructure } from "./types";
+import axios from "axios";
 
-const initialActivityState: ActivitiesInitialStructure = {
+export const initialActivityState: ActivitiesInitialStructure = {
   activities: [],
 };
+
+export const getActivities = createAsyncThunk(
+  "activities/getActivities",
+  async (_data, { dispatch }) => {
+    const baseURL = import.meta.env.VITE_API_URL;
+    const { loadActivities } = activitiesSlice.actions;
+    const response = await axios(`${baseURL}/activities`);
+    dispatch(loadActivities(response.data.activities));
+  },
+);
 
 export const activitiesSlice = createSlice({
   name: "activities",
@@ -12,10 +23,12 @@ export const activitiesSlice = createSlice({
     loadActivities: (
       currentState,
       action: PayloadAction<ActivityStructure[]>,
-    ): ActivitiesInitialStructure => ({
-      ...currentState,
-      activities: action.payload,
-    }),
+    ): ActivitiesInitialStructure => {
+      return {
+        ...currentState,
+        activities: action.payload,
+      };
+    },
   },
 });
 
