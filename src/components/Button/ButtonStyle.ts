@@ -5,7 +5,6 @@ const ButtonStyle = styled.button`
   text-align: center;
 
   &.button--small {
-    width: 45%;
     text-transform: uppercase;
     font-size: 16px;
     font-weight: 400;
@@ -19,6 +18,7 @@ const ButtonStyle = styled.button`
 
   &.button--dotted {
     border: 2.5px dashed ${({ theme }) => theme.color.main};
+    background-color: ${({ theme }) => theme.color.secondary};
     color: ${({ theme }) => theme.color.main};
     padding: 9px 37px;
   }
