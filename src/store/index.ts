@@ -3,7 +3,7 @@ import { activitiesReducer } from "./features/activities/activitiesSlice";
 
 export const store = configureStore({
   reducer: {
-    activitiesState: activitiesReducer,
+    activities: activitiesReducer,
   },
 });
 
