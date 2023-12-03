@@ -7,8 +7,12 @@ describe("Given an ActivityCard component", () => {
   describe("When is rendered with 'Generative plant gadering' activity", () => {
     test("Then it should show 'Steve Green and Lia Rasmussen' as leds", () => {
       const expectedName = activitiesMockData[0].activityName;
+      const mockData = activitiesMockData;
 
-      customRenderProvider(<ActivityCard activity={activitiesMockData[0]} />);
+      customRenderProvider(
+        <ActivityCard activity={activitiesMockData[0]} />,
+        mockData,
+      );
 
       const heading = screen.getByText(expectedName);
 
@@ -17,8 +21,12 @@ describe("Given an ActivityCard component", () => {
 
     test("Then it should 'Generative plant gadering' image on screen", () => {
       const expectedAltText = activitiesMockData[0].activityName;
+      const mockData = activitiesMockData;
 
-      customRenderProvider(<ActivityCard activity={activitiesMockData[0]} />);
+      customRenderProvider(
+        <ActivityCard activity={activitiesMockData[0]} />,
+        mockData,
+      );
 
       const imageCard = screen.getByRole("img", {
         name: expectedAltText,
