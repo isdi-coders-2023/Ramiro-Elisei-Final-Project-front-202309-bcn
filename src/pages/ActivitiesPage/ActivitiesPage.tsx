@@ -1,20 +1,20 @@
 import ActivitiesPageStyle from "./ActivitiesPageStyle";
 import ActivitiesList from "../../components/ActivitiesList/ActivitiesList";
-import activitiesMockData from "../../mocks/activitiesMock";
 import { useEffect } from "react";
-import { loadActivitiesActionCreator } from "../../store/features/activities/activitiesSlice";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { getActivities } from "../../store/features/activities/activitiesSlice";
+import { useAppDispatch } from "../../store/hooks";
+import { useSelector } from "react-redux";
+import { ActivitiesInitialStructure } from "../../store/features/activities/types";
+import { RootState } from "../../store";
 
 const ActivitiesPage = (): React.ReactElement => {
-  const activitiesState = useAppSelector(
-    (activity) => activity.activitiesState,
-  );
   const dispatch = useAppDispatch();
+  const { activities }: ActivitiesInitialStructure = useSelector(
+    (state: RootState) => state.activities || { activities: [] },
+  );
 
   useEffect(() => {
-    (async () => {
-      dispatch(loadActivitiesActionCreator(activitiesMockData));
-    })();
+    dispatch(getActivities());
   }, [dispatch]);
 
   return (
@@ -24,7 +24,7 @@ const ActivitiesPage = (): React.ReactElement => {
         <span className="page__date">dic 27 - 26</span>
         <span className="page__date">2023</span>
       </ActivitiesPageStyle>
-      <ActivitiesList activities={activitiesState.activities} />
+      <ActivitiesList activities={activities} />
     </>
   );
 };
