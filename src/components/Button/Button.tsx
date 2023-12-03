@@ -9,19 +9,13 @@ interface ButtonProps {
 }
 
 const Button = ({
-  disabled,
   text,
   type,
   actionOnClick,
   className,
 }: ButtonProps): React.ReactElement => {
   return (
-    <ButtonStyle
-      type={type}
-      disabled={disabled}
-      onClick={actionOnClick}
-      className={className}
-    >
+    <ButtonStyle type={type} onClick={actionOnClick} className={className}>
       {text}
     </ButtonStyle>
   );

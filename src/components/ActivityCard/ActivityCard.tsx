@@ -6,9 +6,8 @@ interface ActivityCardProps {
   activity: ActivityStructure;
 }
 
-const ActivityCard = ({
-  activity: { imageSmallUrl, activityType, activityName, ledBy },
-}: ActivityCardProps): React.ReactElement => {
+const ActivityCard = ({ activity }: ActivityCardProps): React.ReactElement => {
+  const { imageSmallUrl, activityType, activityName, ledBy } = activity;
   return (
     <ActivityCardStyled className="activity-card">
       <img
