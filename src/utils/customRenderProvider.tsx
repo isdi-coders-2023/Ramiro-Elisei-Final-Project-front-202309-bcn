@@ -6,18 +6,8 @@ import GlobalStyle from "../Styles/GlobalStyle";
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import { activitiesReducer } from "../store/features/activities/activitiesSlice";
-import activitiesMockData from "../mocks/activitiesMock";
-import { PropsWithChildren } from "react";
 import { ActivityStructure } from "../store/features/activities/types";
-
-const mockStore = configureStore({
-  reducer: {
-    activities: activitiesReducer,
-  },
-  preloadedState: {
-    activities: { activities: activitiesMockData },
-  },
-});
+import activitiesMockData from "../mocks/activitiesMock";
 
 const customRenderProvider = (
   children: React.ReactElement,
@@ -39,16 +29,29 @@ const customRenderProvider = (
   );
 };
 
-export const providerWrapper = ({ children }: PropsWithChildren) => {
-  return (
-    <BrowserRouter>
-      <Provider store={mockStore}>
-        <ThemeProvider theme={mainTheme}>
-          <GlobalStyle />
-          {children}
-        </ThemeProvider>
-      </Provider>
-    </BrowserRouter>
+const getMockStore = () => {
+  const mockStore = configureStore({
+    reducer: {
+      activities: activitiesReducer,
+    },
+    preloadedState: {
+      activities: { activities: activitiesMockData },
+    },
+  });
+
+  return mockStore;
+};
+
+export const customRenderWithoutBrowserRouter = (
+  children: React.ReactElement,
+) => {
+  const mockStore = getMockStore();
+
+  render(
+    <ThemeProvider theme={mainTheme}>
+      <Provider store={mockStore}>{children}</Provider>
+      <GlobalStyle />
+    </ThemeProvider>,
   );
 };
 
