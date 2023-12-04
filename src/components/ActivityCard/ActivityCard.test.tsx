@@ -14,12 +14,14 @@ describe("Given an ActivityCard component", () => {
         mockData,
       );
 
-      const heading = screen.getByText(expectedName);
+      const heading = screen.getByRole("heading", {
+        name: expectedName,
+      });
 
       expect(heading.textContent).toBe(expectedName);
     });
 
-    test("Then it should 'Generative plant gadering' image on screen", () => {
+    test("Then it should show 'Generative plant gadering' image on screen", () => {
       const expectedAltText = activitiesMockData[0].activityName;
       const mockData = activitiesMockData;
 
