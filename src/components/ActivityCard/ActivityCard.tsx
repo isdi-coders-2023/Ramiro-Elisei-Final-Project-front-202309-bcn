@@ -8,6 +8,7 @@ interface ActivityCardProps {
 
 const ActivityCard = ({ activity }: ActivityCardProps): React.ReactElement => {
   const { imageSmallUrl, activityType, activityName, ledBy } = activity;
+
   return (
     <ActivityCardStyled className="activity-card">
       <img
@@ -24,7 +25,7 @@ const ActivityCard = ({ activity }: ActivityCardProps): React.ReactElement => {
           src="icons/diamond.svg"
           width="13"
           height="13"
-        ></img>
+        />
         <span className="activity-card__type">{activityType}</span>
       </div>
       <h2 className="activity-card__name">{activityName}</h2>
@@ -34,13 +35,11 @@ const ActivityCard = ({ activity }: ActivityCardProps): React.ReactElement => {
           text="Modify"
           type="button"
           className="button button--small button--dotted"
-          actionOnClick={() => {}}
         />
         <Button
           text="Delete"
           type="button"
           className="button button--small button--solid"
-          actionOnClick={() => {}}
         />
       </div>
     </ActivityCardStyled>
