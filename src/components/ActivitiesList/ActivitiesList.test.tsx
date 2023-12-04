@@ -4,7 +4,7 @@ import ActivitiesList from "./ActivitiesList";
 import activitiesMockData from "../../mocks/activitiesMock";
 
 describe("Given an ActivitiesList component", () => {
-  describe("When the MechasList it is render", () => {
+  describe("When the ActivitiesList it is render", () => {
     test("Then it should show as first position the heading 'Generative plant gadering'", () => {
       const expectedActivityName = "Generative plant gadering";
       const mockData = activitiesMockData;
