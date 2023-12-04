@@ -10,9 +10,8 @@ describe("Given an App component", () => {
   describe("When it is rendered", () => {
     test("Then it should show 'ludic' logo in the header", () => {
       const expectedLogoAltName = "Ludic logo";
-      const mockData = activitiesMockData;
 
-      customRenderProvider(<App />, mockData);
+      customRenderProvider(<App />, activitiesMockData);
 
       const logo = screen.getByRole("img", {
         name: expectedLogoAltName,

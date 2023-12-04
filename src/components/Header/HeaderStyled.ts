@@ -7,6 +7,7 @@ const HeaderStyled = styled.header`
   padding-left: ${({ theme }) => theme.paddingSide};
   padding-right: ${({ theme }) => theme.paddingSide};
   padding-top: ${({ theme }) => theme.paddingTop};
+  padding-bottom: 10px;
 `;
 
 export default HeaderStyled;
