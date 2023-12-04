@@ -16,6 +16,6 @@ describe("Given a useActivitiesApi hook", () => {
       const activities = await getActivities();
 
       expect(activities).toStrictEqual(expectedActivities);
-    }, 10000);
+    });
   });
 });
