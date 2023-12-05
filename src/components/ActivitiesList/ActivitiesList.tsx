@@ -1,12 +1,10 @@
-import { ActivityStructure } from "../../store/features/activities/types";
+import { useAppSelector } from "../../store/hooks";
 import ActivityCard from "../ActivityCard/ActivityCard";
 import ActivitiesListStyle from "./ActivitiesListStyle";
 
-interface ActivitiesListProps {
-  activities: ActivityStructure[];
-}
+const ActivitiesList = (): React.ReactElement => {
+  const activities = useAppSelector((state) => state.activities.activities);
 
-const ActivitiesList = ({ activities }: ActivitiesListProps) => {
   return (
     <ActivitiesListStyle>
       {activities.map((activity) => (

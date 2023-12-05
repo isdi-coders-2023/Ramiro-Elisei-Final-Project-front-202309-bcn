@@ -7,12 +7,8 @@ describe("Given an ActivitiesList component", () => {
   describe("When the ActivitiesList it is render", () => {
     test("Then it should show as first position the heading 'Generative plant gadering'", () => {
       const expectedActivityName = "Generative plant gadering";
-      const mockData = activitiesMockData;
 
-      customRenderProvider(
-        <ActivitiesList activities={activitiesMockData} />,
-        mockData,
-      );
+      customRenderProvider(<ActivitiesList />, activitiesMockData);
 
       const activityName = screen.getByRole("heading", {
         name: expectedActivityName,
@@ -23,12 +19,8 @@ describe("Given an ActivitiesList component", () => {
 
     test("Then should appear as a second position the alternative picture name 'Absurdity Unleashed Talk'", () => {
       const expectedAltText = activitiesMockData[1].activityName;
-      const mockData = activitiesMockData;
 
-      customRenderProvider(
-        <ActivitiesList activities={activitiesMockData} />,
-        mockData,
-      );
+      customRenderProvider(<ActivitiesList />, activitiesMockData);
 
       const imageAltText = screen.getByAltText(expectedAltText);
 
