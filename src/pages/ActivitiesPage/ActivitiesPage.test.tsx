@@ -7,9 +7,8 @@ describe("Given an ActivitiesPage", () => {
   describe("When the page is rendered", () => {
     test("Then it should show the title 'ACTIVITIES' in a heading", () => {
       const expectedHeadingTitle = "activities";
-      const mockData = activitiesMockData;
 
-      customRenderProvider(<ActivitiesPage />, mockData);
+      customRenderProvider(<ActivitiesPage />, activitiesMockData);
 
       const headingTitle = screen.getByRole("heading", {
         name: expectedHeadingTitle,
