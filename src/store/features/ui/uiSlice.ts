@@ -4,19 +4,26 @@ export interface UiStateStructure {
   isLoading: boolean;
 }
 
-const initialState: UiStateStructure = { isLoading: false };
+export const initialState: UiStateStructure = { isLoading: false };
 
 const uiSlice = createSlice({
   name: "ui",
   initialState: initialState,
   reducers: {
-    showLoawding: (currentUiState: UiStateStructure) => ({
+    showLoading: (currentUiState: UiStateStructure) => ({
       ...currentUiState,
       isLoading: true,
+    }),
+    hideLoading: (currentUiState: UiStateStructure) => ({
+      ...currentUiState,
+      isLoading: false,
     }),
   },
 });
 
-export const { showLoawding: showLowdingActionCreator } = uiSlice.actions;
+export const {
+  showLoading: showLoadingActionCreator,
+  hideLoading: hideLoadingActionCreator,
+} = uiSlice.actions;
 
 export const uiReducer = uiSlice.reducer;
