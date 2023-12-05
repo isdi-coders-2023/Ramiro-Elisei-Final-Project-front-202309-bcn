@@ -16,10 +16,13 @@ const customRenderProvider = (
 ) => {
   const mockStore = configureStore({
     reducer: {
-      activitiesState: activitiesReducer,
+      activities: activitiesReducer,
       uiState: uiReducer,
     },
-    preloadedState: { activitiesState: { activities: mockData } },
+    preloadedState: {
+      activities: { activities: mockData },
+      uiState: { isLoading: false },
+    },
   });
   return render(
     <BrowserRouter>
