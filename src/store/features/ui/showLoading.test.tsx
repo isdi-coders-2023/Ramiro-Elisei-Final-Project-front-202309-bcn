@@ -1,6 +1,6 @@
 import {
   UiStateStructure,
-  showLowdingActionCreator,
+  showLoadingActionCreator,
   uiReducer,
 } from "./uiSlice";
 
@@ -15,7 +15,7 @@ describe("Given a showLoading uiReducer", () => {
 
       const isLoadingState = uiReducer(
         currentState,
-        showLowdingActionCreator(),
+        showLoadingActionCreator(),
       );
 
       expect(isLoadingState).toStrictEqual(expectedIsLoading);
