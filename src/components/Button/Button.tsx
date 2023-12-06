@@ -4,7 +4,7 @@ interface ButtonProps {
   disabled?: boolean;
   type?: "reset" | "submit" | "button";
   text: string;
-  className?: string;
+  modifiers?: ("small" | "dotted" | "solid")[];
   actionOnClick?: () => void;
 }
 
@@ -13,14 +13,18 @@ const Button = ({
   text,
   type,
   actionOnClick,
-  className,
+  modifiers,
 }: ButtonProps): React.ReactElement => {
   return (
     <ButtonStyle
       disabled={disabled}
       type={type}
       onClick={actionOnClick}
-      className={className}
+      className={`button ${
+        modifiers
+          ? modifiers?.map((modifier) => "button--" + modifier).join(" ")
+          : ""
+      }`}
     >
       {text}
     </ButtonStyle>

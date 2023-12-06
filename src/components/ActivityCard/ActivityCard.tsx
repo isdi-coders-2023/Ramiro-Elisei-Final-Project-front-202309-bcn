@@ -31,16 +31,8 @@ const ActivityCard = ({ activity }: ActivityCardProps): React.ReactElement => {
       <h2 className="activity-card__name">{activityName}</h2>
       <span className="activity-card__led">{ledBy}</span>
       <div className="activity-card__toolbar">
-        <Button
-          text="Modify"
-          type="button"
-          className="button button--small button--dotted"
-        />
-        <Button
-          text="Delete"
-          type="button"
-          className="button button--small button--solid"
-        />
+        <Button text="Modify" type="button" modifiers={["small", "dotted"]} />
+        <Button text="Delete" type="button" modifiers={["small", "solid"]} />
       </div>
     </ActivityCardStyled>
   );
