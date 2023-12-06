@@ -21,4 +21,21 @@ describe("Given a useActivitiesApi hook", () => {
       expect(activities).toStrictEqual(expectedActivities);
     });
   });
+
+  describe("When it is called with its deleteActivity function with an activity id", () => {
+    test("Then it should delete the 'Absurdity Unleashed Talk'", async () => {
+      const expectedActivityId = activitiesMockData[1]._id;
+      const expectedResponse = {};
+
+      const {
+        result: {
+          current: { deleteActivity },
+        },
+      } = renderHook(() => useActivitiesApi(), { wrapper: providerWrapper });
+
+      const response = await deleteActivity(expectedActivityId);
+
+      expect(response).toStrictEqual(expectedResponse);
+    });
+  });
 });

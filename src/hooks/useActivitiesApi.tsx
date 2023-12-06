@@ -33,7 +33,24 @@ const useActivitiesApi = () => {
       }
     }, [dispatch]);
 
-  return { getActivities };
+  const deleteActivity = useCallback(
+    async (activityId: string) => {
+      try {
+        dispatch(showLoadingActionCreator());
+
+        const { data } = await axios.delete(`activities/delete/${activityId}`);
+
+        dispatch(hideLoadingActionCreator());
+
+        return data;
+      } catch (error) {
+        dispatch(hideLoadingActionCreator());
+      }
+    },
+    [dispatch],
+  );
+
+  return { getActivities, deleteActivity };
 };
 
 export default useActivitiesApi;
