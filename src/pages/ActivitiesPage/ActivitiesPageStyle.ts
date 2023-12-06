@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const ActivitiesPageStyle = styled.section`
+export const ActivitiesPageStyle = styled.div`
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -22,4 +22,7 @@ const ActivitiesPageStyle = styled.section`
   }
 `;
 
-export default ActivitiesPageStyle;
+export const ContentContainerStyle = styled.div`
+  width: 320px;
+  margin: 0 auto;
+`;

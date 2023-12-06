@@ -10,10 +10,12 @@ const App = (): React.ReactElement => {
     <>
       <Header />
       {isLoading && <Loading />}
-      <Routes>
-        <Route path="/" element={<Navigate to="/home" />} />
-        <Route path="/home" element={<ActivitiesPage />} />
-      </Routes>
+      <main>
+        <Routes>
+          <Route path="/" element={<Navigate to="/home" />} />
+          <Route path="/home" element={<ActivitiesPage />} />
+        </Routes>
+      </main>
     </>
   );
 };
