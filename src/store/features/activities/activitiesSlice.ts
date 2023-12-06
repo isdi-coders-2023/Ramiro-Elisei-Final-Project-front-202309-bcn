@@ -16,10 +16,22 @@ export const activitiesSlice = createSlice({
       ...currentState,
       activities: action.payload,
     }),
+
+    deleteActivity: (
+      currentState: ActivitiesInitialStructure,
+      action: PayloadAction<string>,
+    ) => ({
+      ...currentState,
+      activities: currentState.activities.filter(
+        (activity) => activity._id !== action.payload,
+      ),
+    }),
   },
 });
 
-export const { loadActivities: loadActivitiesActionCreator } =
-  activitiesSlice.actions;
+export const {
+  loadActivities: loadActivitiesActionCreator,
+  deleteActivity: deleteActivityActionCreator,
+} = activitiesSlice.actions;
 
 export const activitiesReducer = activitiesSlice.reducer;
