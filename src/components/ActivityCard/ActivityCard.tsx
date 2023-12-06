@@ -1,13 +1,24 @@
 import { ActivityStructure } from "../../store/features/activities/types";
 import Button from "../Button/Button";
 import ActivityCardStyled from "./ActivityCardStyle";
+import { useAppDispatch } from "../../store/hooks";
+import useActivitiesApi from "../../hooks/useActivitiesApi";
+import { deleteActivityActionCreator } from "../../store/features/activities/activitiesSlice";
 
 interface ActivityCardProps {
   activity: ActivityStructure;
 }
 
 const ActivityCard = ({ activity }: ActivityCardProps): React.ReactElement => {
-  const { imageSmallUrl, activityType, activityName, ledBy } = activity;
+  const { imageSmallUrl, activityType, activityName, ledBy, _id } = activity;
+
+  const dispatch = useAppDispatch();
+  const { deleteActivity } = useActivitiesApi();
+
+  const deleteActivityById = (activityId: string) => {
+    deleteActivity(activityId);
+    dispatch(deleteActivityActionCreator(activityId));
+  };
 
   return (
     <ActivityCardStyled className="activity-card">
@@ -32,7 +43,12 @@ const ActivityCard = ({ activity }: ActivityCardProps): React.ReactElement => {
       <span className="activity-card__led">{ledBy}</span>
       <div className="activity-card__toolbar">
         <Button text="Modify" type="button" modifiers={["small", "dotted"]} />
-        <Button text="Delete" type="button" modifiers={["small", "solid"]} />
+        <Button
+          text="Delete"
+          type="button"
+          modifiers={["small", "solid"]}
+          actionOnClick={() => deleteActivityById(_id)}
+        />
       </div>
     </ActivityCardStyled>
   );

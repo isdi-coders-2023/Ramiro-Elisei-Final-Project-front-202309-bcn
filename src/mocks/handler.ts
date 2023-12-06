@@ -6,6 +6,9 @@ const handlers = [
   http.get(`${urlApi}/activities`, () => {
     return HttpResponse.json(activitiesMockData);
   }),
+  http.delete(`${urlApi}/activities/delete/656493fa44b5521c2584c21c`, () => {
+    return HttpResponse.json({});
+  }),
 ];
 
 export default handlers;
