@@ -7,6 +7,11 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  :root {
+    --toastify-color-error: ${({ theme }) => theme.color.secondary};
+    --toastify-color-success: ${({ theme }) => theme.color.secondary};
+  }
+
   html {
     font-family: ${({ theme }) => theme.typography.mainFont};
     background-color: ${({ theme }) => theme.color.secondary};
