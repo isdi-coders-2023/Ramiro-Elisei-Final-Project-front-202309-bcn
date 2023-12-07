@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import axios from "axios";
 import { useCallback } from "react";
 import {
@@ -40,11 +41,21 @@ const useActivitiesApi = () => {
 
         const { data } = await axios.delete(`activities/delete/${activityId}`);
 
+        toast.success("The activity was successfully deleted", {
+          className: "toast toast--success",
+          position: toast.POSITION.TOP_CENTER,
+        });
+
         dispatch(hideLoadingActionCreator());
 
         return data;
       } catch (error) {
         dispatch(hideLoadingActionCreator());
+
+        toast.error("Sorry, the activity could not be deleted", {
+          className: "toast toast--unsuccess",
+          position: toast.POSITION.TOP_CENTER,
+        });
       }
     },
     [dispatch],
