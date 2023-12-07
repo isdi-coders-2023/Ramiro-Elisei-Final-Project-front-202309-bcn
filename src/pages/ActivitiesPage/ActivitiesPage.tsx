@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import {
   ActivitiesPageStyle,
   ContentContainerStyle,
@@ -7,6 +8,7 @@ import { useEffect } from "react";
 import { useAppDispatch } from "../../store/hooks";
 import useActivitiesApi from "../../hooks/useActivitiesApi";
 import { loadActivitiesActionCreator } from "../../store/features/activities/activitiesSlice";
+import { hideLoadingActionCreator } from "../../store/features/ui/uiSlice";
 
 const ActivitiesPage = (): React.ReactElement => {
   const dispatch = useAppDispatch();
@@ -15,9 +17,21 @@ const ActivitiesPage = (): React.ReactElement => {
 
   useEffect(() => {
     (async () => {
-      const { activities } = await getActivities();
+      try {
+        const { activities } = await getActivities();
 
-      dispatch(loadActivitiesActionCreator(activities));
+        dispatch(loadActivitiesActionCreator(activities));
+      } catch (error) {
+        dispatch(hideLoadingActionCreator());
+
+        toast.error(
+          "I apologize, but we were unable to retrieve the activities.",
+          {
+            className: "toast toast--unsuccess",
+            position: toast.POSITION.TOP_CENTER,
+          },
+        );
+      }
     })();
   }, [dispatch, getActivities]);
 

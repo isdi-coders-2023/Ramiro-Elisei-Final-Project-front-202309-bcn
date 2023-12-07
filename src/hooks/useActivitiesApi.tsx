@@ -30,7 +30,7 @@ const useActivitiesApi = () => {
         return activities;
       } catch (error) {
         dispatch(hideLoadingActionCreator());
-        throw (error as Error).message;
+        throw new Error((error as Error).message);
       }
     }, [dispatch]);
 
