@@ -2,7 +2,7 @@ import { ActivityStructure } from "../store/features/activities/types";
 
 const activitiesMockData: ActivityStructure[] = [
   {
-    _id: "656493fa44b5521c2584c216",
+    _id: "656493fa44b5521c2584c21c",
     activityType: "Workshop",
     activityName: "Generative plant gadering",
     ledBy: "Steve Green and Lia Rasmussen",

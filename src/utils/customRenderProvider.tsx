@@ -9,6 +9,7 @@ import { activitiesReducer } from "../store/features/activities/activitiesSlice"
 import { ActivityStructure } from "../store/features/activities/types";
 import { store } from "../store";
 import { uiReducer } from "../store/features/ui/uiSlice";
+import { ToastContainer } from "react-toastify";
 
 const customRenderProvider = (
   children: React.ReactElement,
@@ -27,6 +28,7 @@ const customRenderProvider = (
   return render(
     <BrowserRouter>
       <ThemeProvider theme={mainTheme}>
+        <ToastContainer />
         <Provider store={mockStore}>
           {children}
           <GlobalStyle />
