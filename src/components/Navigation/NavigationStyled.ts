@@ -5,7 +5,7 @@ const NavigationStyled = styled.nav`
 
   .navigation {
     &__element {
-      padding-bottom: 8px;
+      padding-bottom: 11px;
     }
     &__navlink {
       text-transform: uppercase;
