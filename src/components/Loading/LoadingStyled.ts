@@ -4,13 +4,14 @@ const LoadingStyle = styled.div`
   position: relative;
   background-color: black;
   opacity: 0.8;
-  height: 100vh;
+  position: fixed;
+  inset: 0;
 
   .loading {
     position: absolute;
-    top: 180px;
-    left: 50px;
-    margin: 0 auto;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     .loader {
       color: #fff;
