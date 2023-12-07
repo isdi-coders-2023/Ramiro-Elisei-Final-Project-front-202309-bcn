@@ -24,7 +24,7 @@ describe("Given an activitiesReducer", () => {
   });
 
   describe("When it receives a list of activities, a valid activity id and the action deleteActivity", () => {
-    test("Then it should return the list of hotels without the activity 'Generative plant gadering'", () => {
+    test("Then it should return the list of activity without the activity 'Generative plant gadering'", () => {
       const initialState: ActivitiesInitialStructure = {
         activities: activitiesMockData,
       };

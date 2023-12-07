@@ -49,7 +49,7 @@ const useActivitiesApi = () => {
         dispatch(hideLoadingActionCreator());
 
         return data;
-      } catch (error) {
+      } catch {
         dispatch(hideLoadingActionCreator());
 
         toast.error("Sorry, the activity could not be deleted", {
