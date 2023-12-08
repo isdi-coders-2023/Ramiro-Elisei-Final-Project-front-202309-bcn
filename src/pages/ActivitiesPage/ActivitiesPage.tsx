@@ -1,8 +1,5 @@
 import { toast } from "react-toastify";
-import {
-  ActivitiesPageStyle,
-  ContentContainerStyle,
-} from "./ActivitiesPageStyle";
+import { PageStyle, ContentContainerStyle } from "./PageStyle";
 import ActivitiesList from "../../components/ActivitiesList/ActivitiesList";
 import { useEffect } from "react";
 import { useAppDispatch } from "../../store/hooks";
@@ -37,11 +34,11 @@ const ActivitiesPage = (): React.ReactElement => {
 
   return (
     <>
-      <ActivitiesPageStyle>
+      <PageStyle>
         <h1 className="page__title">activities</h1>
         <span className="page__date">dic 27 - 26</span>
         <span className="page__date">2023</span>
-      </ActivitiesPageStyle>
+      </PageStyle>
       <ContentContainerStyle>
         <ActivitiesList />
       </ContentContainerStyle>
