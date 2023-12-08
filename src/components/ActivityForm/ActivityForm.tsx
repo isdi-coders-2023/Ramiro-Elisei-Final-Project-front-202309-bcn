@@ -47,7 +47,6 @@ const ActivityForm = (): React.ReactElement => {
           type="date"
           id="activity-date"
           name="activity-date"
-          value="2023-12-26"
           min="2023-01-01"
           max="2024-12-31"
           className="form__input"
