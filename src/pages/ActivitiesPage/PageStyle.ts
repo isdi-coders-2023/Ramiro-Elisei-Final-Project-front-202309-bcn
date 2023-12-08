@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ActivitiesPageStyle = styled.div`
+export const PageStyle = styled.div`
   display: flex;
   flex-direction: column;
   text-align: left;
