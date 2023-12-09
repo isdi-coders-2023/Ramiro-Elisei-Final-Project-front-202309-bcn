@@ -10,6 +10,20 @@ const ButtonStyle = styled.button`
     font-weight: 400;
   }
 
+  &.button--big {
+    background-color: ${({ theme }) => theme.color.main};
+    color: ${({ theme }) => theme.color.secondary};
+    font-size: 30px;
+    font-weight: 400;
+    width: 100%;
+    height: 98.278px;
+    flex-shrink: 0;
+  }
+
+  &.button--disable {
+    background-color: ${({ theme }) => theme.color.disable};
+  }
+
   &.button--solid {
     background-color: ${({ theme }) => theme.color.main};
     color: ${({ theme }) => theme.color.secondary};

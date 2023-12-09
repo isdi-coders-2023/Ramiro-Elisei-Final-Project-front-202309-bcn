@@ -1,15 +1,15 @@
 import ButtonStyle from "./ButtonStyle";
 
 interface ButtonProps {
-  disabled?: boolean;
+  isDisabled?: boolean;
   type?: "reset" | "submit" | "button";
   text: string;
-  modifiers?: ("small" | "dotted" | "solid")[];
+  modifiers?: ("small" | "dotted" | "solid" | "big")[];
   actionOnClick?: () => void;
 }
 
 const Button = ({
-  disabled,
+  isDisabled,
   text,
   type,
   actionOnClick,
@@ -17,7 +17,7 @@ const Button = ({
 }: ButtonProps): React.ReactElement => {
   return (
     <ButtonStyle
-      disabled={disabled}
+      disabled={isDisabled}
       type={type}
       onClick={actionOnClick}
       className={`button ${

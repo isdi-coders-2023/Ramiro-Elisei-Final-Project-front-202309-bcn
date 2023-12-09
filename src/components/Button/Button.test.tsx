@@ -26,7 +26,7 @@ describe("Given a Button component", () => {
       customRenderProvider(
         <Button
           actionOnClick={testAction}
-          disabled={false}
+          isDisabled={false}
           type="button"
           text={expectedButtonText}
         />,
